@@ -1,0 +1,92 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun strlen_72_64 () (_ BitVec 64))
+(declare-fun args_0_8 () (_ BitVec 8))
+(declare-fun strlen_74_64 () (_ BitVec 64))
+(declare-fun args_1_8 () (_ BitVec 8))
+(declare-fun strlen_77_64 () (_ BitVec 64))
+(declare-fun args_2_8 () (_ BitVec 8))
+(declare-fun strlen_81_64 () (_ BitVec 64))
+(declare-fun args_3_8 () (_ BitVec 8))
+(declare-fun sigaction_oldact_179_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_192_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_212_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_253_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_341_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_498_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_845_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_1469_1216 () (_ BitVec 1216))
+(declare-fun sigaction_oldact_2687_1216 () (_ BitVec 1216))
+(assert
+ (= (_ bv1 64) strlen_72_64))
+(assert
+ (let (($x69 (= (_ bv0 8) args_0_8)))
+ (not $x69)))
+(assert
+ (= (_ bv1 64) strlen_74_64))
+(assert
+ (let (($x347 (= (_ bv0 8) args_1_8)))
+ (not $x347)))
+(assert
+ (let (($x218 (= (_ bv1 64) strlen_77_64)))
+ (not $x218)))
+(assert
+ (let ((?x192 (bvadd (_ bv576460752303357828 64) strlen_77_64)))
+ (let (($x369 (= (_ bv0 8) args_2_8)))
+ (let ((?x373 (ite $x369 (_ bv576460752303357828 64) (_ bv576460752303357829 64))))
+ (= ?x373 ?x192)))))
+(assert
+ (let (($x415 (= (_ bv0 8) args_3_8)))
+ (let ((?x225 (ite $x415 (_ bv576460752303357830 64) (_ bv576460752303357831 64))))
+ (let ((?x197 (bvsub ?x225 (_ bv576460752303357830 64))))
+ (= ?x197 strlen_81_64)))))
+(assert
+ (let ((?x2445 ((_ extract 127 120) sigaction_oldact_179_1216)))
+ (let ((?x2507 (bvand ?x2445 (_ bv4 8))))
+ (and (distinct (_ bv0 8) ?x2507) true))))
+(assert
+ (let ((?x3124 ((_ extract 127 120) sigaction_oldact_192_1216)))
+ (let ((?x3141 (bvand ?x3124 (_ bv4 8))))
+ (= (_ bv0 8) ?x3141))))
+(assert
+ (let ((?x4397 ((_ extract 127 120) sigaction_oldact_212_1216)))
+ (let ((?x4403 (bvand ?x4397 (_ bv4 8))))
+ (and (distinct (_ bv0 8) ?x4403) true))))
+(assert
+ (let ((?x7207 ((_ extract 127 120) sigaction_oldact_253_1216)))
+ (let ((?x7232 (bvand ?x7207 (_ bv4 8))))
+ (and (distinct (_ bv0 8) ?x7232) true))))
+(assert
+ (let ((?x13111 ((_ extract 127 120) sigaction_oldact_341_1216)))
+ (let ((?x13117 (bvand ?x13111 (_ bv4 8))))
+ (= (_ bv0 8) ?x13117))))
+(assert
+ (let ((?x24771 ((_ extract 127 120) sigaction_oldact_498_1216)))
+ (let ((?x24781 (bvand ?x24771 (_ bv4 8))))
+ (and (distinct (_ bv0 8) ?x24781) true))))
+(assert
+ (let ((?x48839 ((_ extract 127 120) sigaction_oldact_845_1216)))
+ (let ((?x2937 (bvand ?x48839 (_ bv4 8))))
+ (= (_ bv0 8) ?x2937))))
+(assert
+ (let ((?x84600 ((_ extract 127 120) sigaction_oldact_1469_1216)))
+ (let ((?x47822 (bvand ?x84600 (_ bv4 8))))
+ (= (_ bv0 8) ?x47822))))
+(assert
+ (let ((?x154360 ((_ extract 127 120) sigaction_oldact_2687_1216)))
+ (let ((?x118237 (bvand ?x154360 (_ bv4 8))))
+ (= (_ bv0 8) ?x118237))))
+(minimize strlen_74_64)
+(maximize sigaction_oldact_498_1216)
+(maximize args_3_8)
+(maximize sigaction_oldact_341_1216)
+(minimize strlen_81_64)
+(minimize sigaction_oldact_498_1216)
+(maximize sigaction_oldact_179_1216)
+(minimize args_3_8)
+(minimize sigaction_oldact_845_1216)
+(minimize sigaction_oldact_2687_1216)
+(maximize strlen_77_64)
+(maximize sigaction_oldact_845_1216)
+(check-sat)
+(get-objectives)

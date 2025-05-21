@@ -1,0 +1,61 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun syscall_stub_newfstatat_75_64 () (_ BitVec 64))
+(declare-fun mem_7fffffffffef6c8_76_32 () (_ BitVec 32))
+(declare-fun mem_7fffffffffef6d8_77_64 () (_ BitVec 64))
+(declare-fun syscall_stub_ioctl_79_32 () (_ BitVec 32))
+(declare-fun mem_7fffffffffef6e8_78_64 () (_ BitVec 64))
+(assert
+ (let ((?x53 ((_ extract 31 0) syscall_stub_newfstatat_75_64)))
+ (bvule ?x53 (_ bv4294963200 32))))
+(assert
+ (let ((?x111 ((_ extract 15 12) mem_7fffffffffef6c8_76_32)))
+ (= (_ bv2 4) ?x111)))
+(assert
+ (let ((?x170 ((_ extract 19 8) mem_7fffffffffef6d8_77_64)))
+ (let ((?x164 ((_ extract 63 44) mem_7fffffffffef6d8_77_64)))
+ (let ((?x205 (concat ?x164 ?x170)))
+ (let ((?x209 (bvadd (_ bv4294967160 32) ?x205)))
+ (let ((?x217 ((_ extract 31 3) ?x209)))
+ (let (($x1072805 (= (_ bv0 29) ?x217)))
+ (not $x1072805))))))))
+(assert
+ (= (_ bv0 32) syscall_stub_ioctl_79_32))
+(assert
+ (let ((?x643 ((_ extract 63 13) mem_7fffffffffef6e8_78_64)))
+ (= (_ bv0 51) ?x643)))
+(assert
+ (let ((?x233 (bvadd (_ bv18446744073709551615 64) mem_7fffffffffef6e8_78_64)))
+ (let ((?x240 ((_ extract 63 13) ?x233)))
+ (= (_ bv0 51) ?x240))))
+(assert
+ (let ((?x1435 ((_ extract 63 7) mem_7fffffffffef6e8_78_64)))
+ (let (($x377 (= (_ bv0 57) ?x1435)))
+ (not $x377))))
+(assert
+ (let ((?x1402 (concat (_ bv0 64) mem_7fffffffffef6e8_78_64)))
+ (let ((?x47668 (bvurem (_ bv73 128) ?x1402)))
+ (let ((?x1252 ((_ extract 63 0) ?x47668)))
+ (= (_ bv73 64) ?x1252)))))
+(assert
+ (let ((?x1402 (concat (_ bv0 64) mem_7fffffffffef6e8_78_64)))
+ (let ((?x47668 (bvurem (_ bv73 128) ?x1402)))
+ (let ((?x1252 ((_ extract 63 0) ?x47668)))
+ (let ((?x47620 (bvmul (_ bv18446744073709551615 64) ?x1252)))
+ (let ((?x339463 (bvadd (_ bv4302578 64) ?x47620)))
+ (= (_ bv4302505 64) ?x339463)))))))
+(assert
+ (let ((?x700 (bvadd (_ bv3221229376 64) mem_7fffffffffef6e8_78_64)))
+(and (distinct (_ bv3221229386 64) ?x700) true)))
+(maximize mem_7fffffffffef6d8_77_64)
+(minimize mem_7fffffffffef6c8_76_32)
+(minimize syscall_stub_newfstatat_75_64)
+(maximize syscall_stub_ioctl_79_32)
+(minimize mem_7fffffffffef6d8_77_64)
+(maximize mem_7fffffffffef6e8_78_64)
+(minimize syscall_stub_ioctl_79_32)
+(maximize syscall_stub_newfstatat_75_64)
+(minimize mem_7fffffffffef6e8_78_64)
+(maximize mem_7fffffffffef6c8_76_32)
+(check-sat)
+(get-objectives)

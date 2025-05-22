@@ -107,7 +107,7 @@ def main():
                         t = t_trans+t_run
                     t_res = [file_list[i], fol, f'1', k, solver_name, t_trans, t_run, t]
                 save_to_csv(res_path, t_res)
-                logging.info(f'File {file_list[i]}, {i}-{num}, algo 2_{n}: finished.')
+                logging.info(f'File {file_list[i]}, {i}-{num}, algo 1: finished.')
                 time.sleep(1)
             else:
                 bit_num = [1,4,8,16,32]

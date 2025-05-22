@@ -35,7 +35,7 @@ def assum_in_m(assum, m):
 
 def cnf_from_z3(constraint_file):
     path = os.getcwd()
-    path = os.path.dirname()
+    path = os.path.dirname(path)
     try:
         command = [path+'/z3/build/z3', "opt.priority=box", constraint_file]
         result = subprocess.run(command,

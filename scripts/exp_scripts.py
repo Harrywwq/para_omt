@@ -42,8 +42,9 @@ def main():
     algo = args.al
     output = args.output
     path = os.getcwd()
-    res_path = os.path.join(path, 'results/'+output+'.csv')
+    
     path = os.path.dirname(path)
+    res_path = os.path.join(path, 'results/'+output+'.csv')
     folder = os.path.join(path, r'benchmarks')
     folder = os.path.join(folder, args.benchmark)
     fol_list = []

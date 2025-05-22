@@ -21,3 +21,5 @@ python exp_scripts.py benchmark_name output_file_name -al=1 -num=4
 -- -al : 1 : objective-level / 2 : bit-level (defalt : 1)
 
 -- -num : para_core_num 4/8/16/.. (defaut : 4)
+
+-- bit-level : run [1,4,8,16,32] bits.  line 113 in exp_scripts.py

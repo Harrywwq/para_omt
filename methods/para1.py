@@ -2,7 +2,7 @@
 import multiprocessing as mp
 import concurrent.futures
 from pysat.solvers import Solver
-from process import cnt
+from methods.process import cnt
 from queue import Empty
 
 

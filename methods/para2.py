@@ -3,7 +3,7 @@ import multiprocessing
 import concurrent.futures
 from pysat.solvers import Solver
 import time
-from process import assum_in_m, list_to_int
+from methods.process import assum_in_m, list_to_int
 from queue import Empty
 
 

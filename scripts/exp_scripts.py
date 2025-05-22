@@ -3,7 +3,7 @@ import time
 import signal
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from methods.para1 import para_1
+from methods.para1 import parall_queue_1_opt
 from methods.para2 import para_bit
 from methods.process import cnf_from_z3, read_cnf
 import csv, subprocess, argparse, logging
@@ -97,7 +97,7 @@ def main():
                     t_res = [file_list[i], fol, f'1', k, solver_name, time_duration, 0 ,time_duration]
                 else:
                     t = time.time()
-                    res = para_1(c, s, o, k)
+                    res = parall_queue_1_opt(c, s, o, k)
                     t_run = time.time() - t
                     if t_run > time_duration:
                         t_run = time_duration

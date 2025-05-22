@@ -44,7 +44,6 @@ def main():
     path = os.getcwd()
     res_path = os.path.join(path, 'results/'+output+'.csv')
     path = os.path.dirname(path)
-    path = os.path.dirname(path)
     folder = os.path.join(path, r'benchmarks')
     folder = os.path.join(folder, args.benchmark)
     fol_list = []

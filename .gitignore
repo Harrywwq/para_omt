@@ -1,7 +1,7 @@
 backup
 bin_solvers/*
 !bin_solvers/download.py
-*.txt
+
 !requirements.txt
 tmp.py
 *.prof

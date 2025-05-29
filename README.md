@@ -4,6 +4,10 @@
 ## Setup
 ```
 mkdir cnf_data
+
+mkdir results
+
+pip install -r requirements.txt
 ```
 
 ## Build z3

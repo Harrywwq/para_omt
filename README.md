@@ -1,25 +1,40 @@
-## make results directory
-```
-mkrid results
-```
-## build z3
-```
-mkdir build
 
-cd build
+# para_omt
+
+## Setup
+```
+mkdir cnf_data
+```
+
+## Build z3
+```
+cd z3
+
+mkdir build && cd build
 
 cmake -G "Unix Makefiles" ../
 
 make -j4 # Replace 4 with an appropriate number
-```
-## run experiment
-```
-python exp_scripts.py benchmark_name output_file_name -al=1 -num=4
-```
--- benchmark_name : clearblue / cpbenchmark / spec
 
--- -al : 1 : objective-level / 2 : bit-level (defalt : 1)
+cd ../..
+```
 
--- -num : para_core_num 4/8/16/.. (defaut : 4)
+## Run experiment
+```
 
--- bit-level : run [1,4,8,16,32] bits.  line 113 in exp_scripts.py
+# Transform CNFs
+python transform.py benchmark_name 
+
+# Solving under different number of parallel cores
+python solve.py benchmark_name -num=4
+```
+- benchmark_name
+    - clearblue
+    - cpbenchmark
+    - spec
+
+- num (default : 4)
+    - 4
+    - 8
+    - 16
+    - 32
